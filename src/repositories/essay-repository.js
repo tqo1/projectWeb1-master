@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const Essay = mongoose.model('Essay');
 
 exports.get = async() => {
-    let res = await Essay.find({}, 'created');
+    let res = await Essay.find({}, 'content deadline wordCount isRequired');
     return res;
 }
 
-exports.getById = async(id) => {
-    let res = await Essay.findById(id, 'created');
+exports.getById = async(schoolId) => {
+    let res = await Essay.findById(schoolId, 'content deadline wordCount isRequired');
     return res;
 }
 
