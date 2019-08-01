@@ -8,8 +8,8 @@ exports.get = async() => {
     return res;
 }
 
-exports.getById = async(schoolId) => {
-    let res = await Essay.findById(schoolId, 'created');
+exports.getById = async(id) => {
+    let res = await Essay.findById(id, 'created');
     return res;
 }
 

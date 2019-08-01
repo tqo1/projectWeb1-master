@@ -33,6 +33,7 @@ exports.get = async(req, res, next) => {
         let data = await repository.get();
         res.status(200).send(data);
     } catch(e) {
+        console.log(e);
         res.status(500).send({message: 'Fail to get all essays'});
     }
 }
@@ -42,6 +43,7 @@ exports.getById = async(req, res, next) => {
         let data = await repository.getById(req.params.schoolId);
         res.status(200).send(data);
     } catch(e) {
+        console.log(e);
         res.status(500).send({message: 'Fail to get the specific essay'});
     }
 }
@@ -72,16 +74,7 @@ exports.getById = async(req, res, next) => {
  */
 exports.post = async(req, res, next) => {
     try {
-        // let contract = new validationContract();
-        // contract.hasMinLen(req.body.name, 3, 'The name has to be at least 3 characters');
-        // contract.isEmail(req.body.email, 'Invalid email');
-        // contract.hasMinLen(req.body.password, 6, 'The password has to be at least 3 characters');
 
-        // if(!contract.isValid()) {
-        //     res.status(400).send(contract.errors()).end();
-        //     return;
-        //
-        // }    
         await repository.create({
             schoolId: req.body.schoolId,
             wordCount: req.body.wordCount,
