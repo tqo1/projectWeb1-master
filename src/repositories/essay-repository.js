@@ -8,8 +8,13 @@ exports.get = async() => {
     return res;
 }
 
-exports.getById = async(schoolId) => {
-    let res = await Essay.findById(schoolId, 'content deadline wordCount isRequired');
+exports.getById = async(id) => {
+    let res = await Essay.findById(id, 'content deadline wordCount isRequired');
+    return res;
+}
+
+exports.getBySchoolId = async(schoolId) => {
+    let res = await Essay.find({schooid: ObjectId(schoolId)}, 'content deadline wordCount isRequired');
     return res;
 }
 
