@@ -48,9 +48,10 @@ exports.getById = async(req, res, next) => {
 
 exports.getBySchoolId = async(req, res, next) => {
     try {
-        let data = await repository.getBySchoolId(req.params.ObjectId(schoolId));
+        let data = await repository.getBySchoolId(req.params.schoolId);
         res.status(200).send(data);
     } catch(e) {
+        console.log(e);
         res.status(500).send({message: 'Fail to get the specific essay'});
     }
 }

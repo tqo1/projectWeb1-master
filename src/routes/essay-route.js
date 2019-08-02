@@ -9,7 +9,7 @@ router.get('/', controller.get);
 
 router.get('/:id',controller.getById);
 
-router.get('/:schoolId',controller.getBySchoolId);
+router.get('/schools/:schoolId',controller.getBySchoolId);
 
 router.post('/', controller.post);
 

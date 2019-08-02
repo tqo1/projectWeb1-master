@@ -14,7 +14,7 @@ exports.getById = async(id) => {
 }
 
 exports.getBySchoolId = async(schoolId) => {
-    let res = await Essay.find({schooid: ObjectId(schoolId)}, 'content deadline wordCount isRequired');
+    let res = await Essay.find({schooid:schoolId});
     return res;
 }
 
