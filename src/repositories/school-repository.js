@@ -8,8 +8,8 @@ exports.get = async() => {
     return res;
 }
 
-exports.getById = async(name) => {
-    let res = await School.findById(name, 'name city country created');
+exports.getById = async(id) => {
+    let res = await School.findById(id, 'name city country created');
     return res;
 }
 
@@ -18,8 +18,8 @@ exports.create = async(data) => {
     await school.save();
 }
 
-exports.delete = async(name) => {
-    let school = School.findByIdAndDelete(name);
+exports.delete = async(id) => {
+    let school = School.findByIdAndDelete(id);
     await school;//.remove()
 }
 

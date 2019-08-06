@@ -7,10 +7,10 @@ const authService = require('../services/auth-service');
 
 router.get('/', controller.get);
 
-router.get('/:name',controller.getById);
+router.get('/:id',controller.getById);
 
 router.post('/', controller.post);
 
-router.delete('/:name', controller.delete);
+router.delete('/:id', controller.delete);
 
 module.exports = router;

@@ -38,7 +38,7 @@ exports.get = async(req, res, next) => {
 
 exports.getById = async(req, res, next) => {
     try {
-        let data = await repository.getById(req.params.name);
+        let data = await repository.getById(req.params.id);
         res.status(200).send(data);
     } catch(e) {
         res.status(500).send({message: 'Fail to get the specific school'});
@@ -93,7 +93,7 @@ exports.post = async(req, res, next) => {
 //Delete:
 exports.delete = async(req, res, next) => {
     try{
-        repository.delete({_id: req.params.name});
+        repository.delete({_id: req.params.id});
         res.status(200).send({message: 'School deleted'});
     }
     catch (e) {
