@@ -90,3 +90,13 @@ exports.post = async(req, res, next) => {
     }
 }
 
+//Delete:
+exports.delete = async(req, res, next) => {
+    try{
+        repository.delete({_id: req.params.name});
+        res.status(200).send({message: 'School deleted'});
+    }
+    catch (e) {
+        if (err) res.status(500).send({message: 'Fail to delete'});
+    }
+}//;

@@ -11,4 +11,6 @@ router.get('/:name',controller.getById);
 
 router.post('/', controller.post);
 
+router.delete('/:name', controller.delete);
+
 module.exports = router;

@@ -18,3 +18,8 @@ exports.create = async(data) => {
     await school.save();
 }
 
+exports.delete = async(name) => {
+    let school = School.findByIdAndDelete(name);
+    await school;//.remove()
+}
+
