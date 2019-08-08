@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const School = mongoose.model('School');
 
 exports.get = async() => {
-    let res = await School.find({}, 'name city country created');
+    let res = await School.find();
     return res;
 }
 

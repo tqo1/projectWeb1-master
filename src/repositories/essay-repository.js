@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const Essay = mongoose.model('Essay');
+var ObjectId = require('mongoose').Types.ObjectId; 
 
 exports.get = async() => {
     let res = await Essay.find({}, 'content deadline wordCount isRequired');
@@ -14,7 +15,7 @@ exports.getById = async(id) => {
 }
 
 exports.getBySchoolId = async(schoolId) => {
-    let res = await Essay.find({schoolid:mongoose.Types.objectid(schoolId)});
+    let res = await Essay.find({schoolId: ObjectId(schoolId)});
     return res;
 }
 
