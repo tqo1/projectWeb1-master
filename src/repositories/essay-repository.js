@@ -14,7 +14,7 @@ exports.getById = async(id) => {
 }
 
 exports.getBySchoolId = async(schoolId) => {
-    let res = await Essay.find({schooid:schoolId});
+    let res = await Essay.find({schoolid:mongoose.Types.objectid(schoolId)});
     return res;
 }
 
